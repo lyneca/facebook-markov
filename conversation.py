@@ -1,4 +1,4 @@
-from parser import MyMessageParser
+from message_parser import MyMessageParser
 import sys
 import os
 import markovify
