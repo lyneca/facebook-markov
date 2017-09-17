@@ -3,6 +3,8 @@ import os
 import markovify
 import random
 
+if not os.path.exists('people.txt'):
+    open('people.txt').close()
 if not os.path.exists('data'):
     os.mkdir('data')
 
