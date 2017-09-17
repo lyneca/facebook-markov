@@ -3,9 +3,8 @@ import os
 import markovify
 import random
 
-names = [
-    # Put Facebook first/last names here
-]
+with open('people.txt') as f:
+    names = f.read().strip().split('\n')
 names = [x.lower() for x in names]
 text_models = {}
 
