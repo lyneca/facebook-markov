@@ -3,6 +3,9 @@ import os
 import markovify
 import random
 
+if not os.path.exists('data'):
+    os.mkdir('data')
+
 with open('people.txt') as f:
     names = f.read().strip().split('\n')
 names = [x.lower() for x in names]
