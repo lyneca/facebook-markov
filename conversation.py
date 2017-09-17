@@ -5,7 +5,6 @@ import random
 
 names = [
     # Put Facebook first/last names here
-    "Caitlin Bubb"
 ]
 names = [x.lower() for x in names]
 text_models = {}
