@@ -12,7 +12,7 @@ text_models = {}
 
 for name in names:
     name = name.lower()
-    filename = name.replace(' ', '_') + '.msg'
+    filename = 'data/' + name.replace(' ', '_') + '.msg'
     if not os.path.exists(filename):
         open(filename, 'x').close()
         print('Extracting user messages for {}...'.format(name))

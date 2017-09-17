@@ -8,7 +8,7 @@ if __name__ == '__main__':
     ]
     for name in names:
         name = input("Name: ").lower()
-        filename = name.replace(' ', '_') + '.msg'
+        filename = 'data/' + name.replace(' ', '_') + '.msg'
         if not os.path.exists(filename):
             open(filename, 'x').close()
             print('Extracting user messages...')
