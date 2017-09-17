@@ -1,8 +1,13 @@
 from parser import MyMessageParser
+import sys
 import os
 import markovify
 import random
 
+if not os.path.exists('people.txt'):
+    print("Enter some names into people.txt.")
+    open('people.txt', 'x').close()
+    sys.exit()
 if not os.path.exists('data'):
     os.mkdir('data')
 
