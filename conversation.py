@@ -4,6 +4,7 @@ import markovify
 import random
 
 names = [
+    # Put Facebook first/last names here
 ]
 names = [x.lower() for x in names]
 text_models = {}

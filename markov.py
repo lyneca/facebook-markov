@@ -3,11 +3,8 @@ import markovify
 import os
 
 if __name__ == '__main__':
+    # Put Facebook first/last names here
     names = [
-        "Sam Kelly",
-        "Craig Smith",
-        "Luke Tuthill",
-        "Kathryn Molloy",
     ]
     for name in names:
         name = input("Name: ").lower()
