@@ -5,6 +5,7 @@ import random
 
 names = [
     # Put Facebook first/last names here
+    "Caitlin Bubb"
 ]
 names = [x.lower() for x in names]
 text_models = {}
@@ -27,10 +28,8 @@ for name in names:
 def capitalize(s):
     return ' '.join([x.capitalize() for x in s.split()])
 
-for i in range(10):
-    name = random.choice(names)
-    print(capitalize(name) + ': ' + text_models[name].make_short_sentence(140))
 while True:
-    name = random.choice(names)
-    print(capitalize(name) + ': ' + text_models[name].make_short_sentence(140))
+    for i in range(10):
+        name = random.choice(names)
+        print(capitalize(name) + ': ' + text_models[name].make_short_sentence(140))
     input()
