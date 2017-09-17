@@ -40,6 +40,8 @@ class BaseMessageParser(HTMLParser):
         else:
             self.handle_message(data)
 
+    # You should only need to implement these four (and possibly __init__)
+
     def handle_timestamp(self, timestamp):
         pass
 
