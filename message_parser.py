@@ -52,4 +52,4 @@ class BaseMessageParser(HTMLParser):
         pass
 
     def handle_users(self, users):
-        pass
+        self.users = users
