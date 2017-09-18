@@ -1,4 +1,5 @@
 from html.parser import HTMLParser
+import os
 
 class BaseMessageParser(HTMLParser):
     def __init__(self):
@@ -76,4 +77,36 @@ class MyMessageParser(BaseMessageParser):
 
     def handle_users(self, users):
         pass
-    
+   
+class MessageSaver(BaseMessageParser):
+    def __init__(self):
+        super().__init__()
+        self.names = []
+        self.current_file = ''
+        self.skip = False
+        self.skip_list = []
+
+    def filename(self, name):
+        return 'data/' + name.lower().replace(' ', '_') + '.msg'
+
+    def handle_message(self, message):
+        if self.skip: return
+        with open(self.current_file, 'a') as f:
+            f.write(message + '\n')
+
+    def handle_sender(self, sender):
+        self.current_file = self.filename(sender)
+        if sender in self.skip_list:
+            self.skip = True
+            return
+        if sender not in self.names:
+            self.names.append(sender)
+            if not os.path.exists(self.current_file):
+                open(self.current_file, 'x').close()
+                self.skip = True
+            else:
+                print('File for {} exists. Skipping.'.format(sender))
+                self.skip_list.append(sender)
+                self.skip = True
+        else:
+            self.skip = False
